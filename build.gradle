@@ -1,0 +1,23 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+}
+
+version = '1.0.2'
+group = 'org.gradle.sample'
+
+application {
+    // mainClass = 'org.gradle.sample.app.MainKt'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+    testCompile group: 'org.amshove.kluent', name: 'kluent', version: '1.61'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0'
+    test.useJUnitPlatform() // fix "test events not received" bug in IDEA
+}
